@@ -9,10 +9,13 @@ class GradientContainer extends StatelessWidget {
   const GradientContainer.purple({super.key})
       : color1 = Colors.deepPurple,
         color2 = Colors.indigo;
-  
 
   final Color color1;
   final Color color2;
+
+  void rollDice() {
+
+  }
 
   @override
   Widget build(context) {
@@ -25,8 +28,18 @@ class GradientContainer extends StatelessWidget {
         ),
       ),
       child: Center(
-        child: Image.asset('assets/images/dice-2.png', 
-        width: 200),
+        child: Column(
+          children: [
+            Image.asset(
+              'assets/images/dice-2.png',
+              width: 200,
+            ),
+            ElevatedButton(
+              onPressed: rollDice,
+              child: const Text('Roll Dice'),
+            )
+          ],
+        ),
       ),
     );
   }
